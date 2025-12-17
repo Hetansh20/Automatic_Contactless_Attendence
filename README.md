@@ -78,19 +78,19 @@ Contactless-Attendance-System/
 ```
 ---
 
-##⚙️ Installation & Setup
-# Step 1: Clone the Repository
+## ⚙️ Installation & Setup
+- Step 1: Clone the Repository
 - git clone https://github.com/your-username/Contactless-Attendance-System.git
 - cd Contactless-Attendance-System
 
-# Step 2: Create Virtual Environment
+- Step 2: Create Virtual Environment
 - python -m venv venv
 
-# Step 3: Activate Virtual Environment
+- Step 3: Activate Virtual Environment
 - venv\Scripts\activate      # Windows
 - #source venv/bin/activate  # Linux / macOS
 
-# Step 4: Install Dependencies
+- Step 4: Install Dependencies
 - pip install -r requirements.txt
 
 ---
