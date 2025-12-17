@@ -96,8 +96,7 @@ Contactless-Attendance-System/
 ---
 
 ## 🚀 How to Run
-
-# Start GUI Application
+- Start GUI Application
 - python main_gui.py
 
 ---
