@@ -153,8 +153,8 @@ Contactless-Attendance-System/
 ---
 
 ## 👥 Project Authors
-- [Ansh Raythatha] (https://github.com/Ansh0308)
-- [Hetansh Shah] (https://github.com/Hetansh20)
+- [Ansh Raythatha](https://github.com/Ansh0308)
+- [Hetansh Shah](https://github.com/Hetansh20)
 
 ---
 
