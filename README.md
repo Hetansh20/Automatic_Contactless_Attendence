@@ -1,4 +1,3 @@
-
 # Contactless Attendance System 🎯
 
 A **Contactless Attendance System** that uses **Face Recognition** to automatically mark attendance without physical interaction.  
@@ -8,245 +7,157 @@ The system captures facial images, trains a recognition model, identifies users 
 
 ## 📌 Overview
 
-The project implements a face-based attendance mechanism using **Local Binary Pattern Histogram (LBPH)** for face recognition.  
-Facial images are captured through a webcam, processed using OpenCV, and matched against trained data. Once a face is recognized, attendance is recorded in the database and can be exported or emailed as reports.
+This project implements a face-based attendance mechanism using **Local Binary Pattern (LBP)** and **Local Binary Pattern Histogram (LBPH)** algorithms.  
+Facial images are captured through a webcam, processed using OpenCV, and matched against trained data. When a face is successfully recognized, attendance is recorded in the database and can be exported or emailed as reports.
 
 ---
 
-## ✨ Key Features
+## ✨ Features
 
-- 📷 Face detection using Haar Cascade Classifier  
-- 🧠 Face recognition using **LBP / LBPH algorithm**  
-- 🗂️ Automatic attendance marking  
-- 👨‍🏫 Faculty authentication system  
-- 🗄️ SQLite database integration  
-- 📊 Attendance export to CSV  
-- ✉️ Automated email reporting  
-- 🖥️ GUI-based interface and backend API  
-- 🔐 Secure login and session handling  
+- Face detection using Haar Cascade Classifier  
+- Face recognition using **LBP / LBPH**  
+- Automatic attendance marking  
+- Faculty authentication system  
+- SQLite database storage  
+- CSV export of attendance  
+- Automated email reports  
+- GUI-based application  
+- Backend API support  
 
 ---
 
 ## 🛠️ Technologies Used
 
-- **Programming Language:** Python  
+- **Language:** Python  
 - **Computer Vision:** OpenCV  
-- **Face Recognition Algorithm:** Local Binary Pattern Histogram (LBPH)  
+- **Face Recognition:** LBP, LBPH  
 - **Database:** SQLite  
-- **GUI Framework:** Tkinter / CustomTkinter  
-- **Backend Framework:** Flask  
+- **GUI:** Tkinter / CustomTkinter  
+- **Backend:** Flask  
 - **Email Service:** SMTP  
-- **Version Control:** Git  
 
 ---
 
 ## 📂 Project Structure
 
+```text
 Contactless-Attendance-System/
 │
-├── Attendance/ # Daily attendance records
-├── EmployeeDetails/ # Registered user data
-├── ImagesUnknown/ # Unrecognized face images
-├── TrainingImage/ # Training dataset
-├── TrainingImageLabel/ # Generated labels
+├── Attendance/                   # Daily attendance records
+├── EmployeeDetails/              # Registered user details
+├── ImagesUnknown/                # Unrecognized face images
+├── TrainingImage/                # Images used for training
+├── TrainingImageLabel/           # Generated labels
 │
-├── admin_dashboard.py
-├── app_launcher.py
+├── admin_dashboard.py            # Admin dashboard
+├── app_launcher.py               # Application launcher
 ├── attendance_client.py
-├── attendance_marker.py
-├── attendance_system.db
-├── auth.py
-├── automail.py
+├── attendance_marker.py          # Attendance logic
+├── attendance_system.db          # SQLite database
+├── auth.py                       # Authentication logic
+├── automail.py                   # Email service
 ├── automail_enhanced.py
-├── Capture_Image.py
-├── csv_export_service.py
-├── database.py
+├── Capture_Image.py              # Capture face images
+├── csv_export_service.py         # CSV export
+├── database.py                   # Database operations
 ├── email_service.py
-├── face_recognition_engine.py
-├── faculty_login.py
+├── face_recognition_engine.py    # Face recognition core
+├── faculty_login.py              # Faculty login module
 ├── haarcascade_frontalface_default.xml
 ├── Info.py
 ├── label_mapping.json
-├── main.py
-├── main_gui.py
-├── Recognize.py
+├── main.py                       # Backend server
+├── main_gui.py                   # GUI entry point
+├── Recognize.py                  # Recognition & attendance
 ├── recognition_client.py
-├── Train_Image.py
+├── Train_Image.py                # Model training
 ├── timetable_manager/
 ├── requirements.txt
 ├── setup.py
 └── README.md
+```
+---
 
-yaml
-Copy code
+##⚙️ Installation & Setup
+# Step 1: Clone the Repository
+- git clone https://github.com/your-username/Contactless-Attendance-System.git
+- cd Contactless-Attendance-System
+
+# Step 2: Create Virtual Environment
+- python -m venv venv
+
+# Step 3: Activate Virtual Environment
+- venv\Scripts\activate      # Windows
+- #source venv/bin/activate  # Linux / macOS
+
+# Step 4: Install Dependencies
+- pip install -r requirements.txt
 
 ---
 
-## ⚙️ Installation & Setup
+## 🚀 How to Run
 
-### 1️⃣ Clone the Repository
-```bash
-git clone https://github.com/your-username/Contactless-Attendance-System.git
-cd Contactless-Attendance-System
-2️⃣ Create and Activate Virtual Environment
-bash
-Copy code
-python -m venv venv
-venv\Scripts\activate   # Windows
-3️⃣ Install Dependencies
-bash
-Copy code
-pip install -r requirements.txt
-🚀 How to Run the System
-▶️ Launch GUI
-bash
-Copy code
-python main_gui.py
-▶️ Start Backend Server
-bash
-Copy code
-python main.py
-▶️ Capture User Images
-bash
-Copy code
-python Capture_Image.py
-▶️ Train Face Recognition Model
-bash
-Copy code
-python Train_Image.py
-▶️ Recognize Face and Mark Attendance
-bash
-Copy code
-python Recognize.py
-🔄 System Flow
-Step-by-Step Flow
-Faculty Login
+# Start GUI Application
+- python main_gui.py
 
-Faculty logs in using secure credentials.
+---
 
-Image Capture
+## 🔄 System Flow
 
-Facial images are captured via webcam for new users.
+- Faculty logs in using credentials
+- Facial images are captured via webcam
+- Face detection using Haar Cascade
+- Feature extraction using LBP
+- Histogram generation using LBPH
+- Live face comparison with trained data
+- Attendance marked for recognized faces
+- Data stored and reports generated
 
-Image Preprocessing
+---
 
-Face detection using Haar Cascade.
+## 📊 Attendance Management
 
-Grayscale conversion and normalization.
+- Stored in SQLite database
+- Exportable as CSV
+- Each record contains:
+- User ID
+- Name
+- Date
+- Time
+- Subject / Session
 
-Model Training
+---
 
-Feature extraction using LBP.
+## 🔐 Authentication
 
-Histogram generation using LBPH.
+- Faculty login system
+- Password hashing
+- Session-based access control
 
-Face Recognition
+---
 
-Live face captured.
+## 📧 Email Reporting
 
-Histogram comparison with trained data.
+- Automatic attendance reports via email
+- SMTP-based email service
+- Configurable email settings
 
-Attendance Marking
+---
 
-If matched, attendance is stored in database.
+## ⚠️ Important Notes
 
-If not matched, face is saved as unknown.
+- Webcam access is required
+- Proper lighting improves recognition accuracy
+- Train the model with sufficient images
+- Unknown faces are stored for review
 
-Report Generation
+---
 
-Attendance exported as CSV.
+## 👥 Project Authors
+- [Ansh Raythatha] (https://github.com/Ansh0308)
+- [Hetansh Shah] (https://github.com/Hetansh20)
 
-Email report sent automatically.
+---
 
-🔁 Flow Diagram
-pgsql
-Copy code
-+-------------------+
-| Faculty Login     |
-+---------+---------+
-          |
-          v
-+-------------------+
-| Capture Face      |
-+---------+---------+
-          |
-          v
-+-------------------+
-| Face Detection    |
-| (Haar Cascade)    |
-+---------+---------+
-          |
-          v
-+-------------------+
-| LBP Feature       |
-| Extraction        |
-+---------+---------+
-          |
-          v
-+-------------------+
-| LBPH Model        |
-| Training / Match  |
-+---------+---------+
-          |
-    +-----+-----+
-    |           |
-    v           v
-+---------+  +------------------+
-| Known   |  | Unknown Face     |
-| Face    |  | Stored           |
-+----+----+  +------------------+
-     |
-     v
-+-------------------+
-| Mark Attendance   |
-+---------+---------+
-          |
-          v
-+-------------------+
-| Database / CSV /  |
-| Email Report      |
-+-------------------+
-📊 Attendance Management
-Attendance is stored in:
-
-SQLite database
-
-CSV report files
-
-Each record contains:
-
-User ID
-
-Name
-
-Date and time
-
-Session or subject information
-
-🔐 Authentication
-Faculty login system
-
-Password hashing
-
-Session-based access control
-
-📧 Email Reporting
-Attendance reports sent automatically
-
-SMTP-based email service
-
-Supports enhanced templates
-
-⚠️ Important Notes
-Webcam access is required
-
-Proper lighting improves recognition accuracy
-
-Train the model with sufficient images per user
-
-Unknown faces are stored for review
-
-👥 Project Authors
-Ansh Raythatha
-
-Hetansh Shah
+## 📌 Conclusion
+- This project demonstrates a complete face recognition–based attendance system using LBP and LBPH, integrating image processing, machine learning, database management, and automated reporting into a single application.
